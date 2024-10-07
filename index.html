@@ -8,7 +8,8 @@
         body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
         .slide {
             height: 100vh;
@@ -18,47 +19,195 @@
             align-items: center;
             text-align: center;
             padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .slide:hover {
+            transform: scale(1.02);
         }
         h1, h2 {
             margin: 0 0 20px 0;
+            color: #333;
         }
         nav {
-            text-align: center;
-            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 1000;
         }
         .nav-links {
-            margin-top: 20px;
             display: flex;
-            justify-content: space-between;
-            width: 300px;
+            justify-content: center;
+            gap: 20px;
         }
         a {
             text-decoration: none;
             color: #4CAF50;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
         a:hover {
             color: #45a049;
         }
-        .plan-link {
-            color: #f44336;
+        .nav-links a {
+            color: #fff;
         }
-        .plan-link:hover {
-            color: #d32f2f;
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+        .formula-dropdown {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .formula-content {
+            display: none;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+                .definitions-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .definition-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .definition-card:hover {
+            transform: translateY(-5px);
+        }
+        .definition-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .definition-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .definition-text {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .ml-model { background-color: #e6f7ff; }
+        .input-output { background-color: #fff0f5; }
+        .counterfactual { background-color: #f0fff0; }
+        .properties { background-color: #fff5e6; }
+                .formula-explanation {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .formula-part {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            margin: 0 10px;
+        }
+        .evaluation-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .evaluation-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 180px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .evaluation-card:hover {
+            transform: translateY(-5px);
+        }
+        .evaluation-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .evaluation-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .evaluation-text {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .optimization-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .optimization-part {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            text-align: left;
+        }
+        .dpp-explanation {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 80%;
+            text-align: left;
         }
     </style>
 </head>
 <body>
 
+
+    <nav>
+        <div class="nav-links">
+            <a href="#slide1">Home</a>
+            <a href="#slide2">Plan</a>
+            <a href="#slide6">Generation</a>
+            <a href="#slide11">Conclusion</a>
+        </div>
+    </nav>
+
     <div class="slide" id="slide1">
         <h1>Counterfactual Explanations and Their Importance</h1>
         <p>Counterfactual explanations show how slight changes to input features could lead to a different model prediction. They answer "what-if" questions, helping users understand not just <b>why</b> a decision was made but <b>how</b> to change it. These explanations are crucial for offering actionable insights to users in areas like finance, healthcare, and criminal justice.</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
+        <a href="https://github.com/interpretml/DiCE">Explore the DiCE Framework</a>
+        <div class="bottom-nav">
+            <a href="#slide11">Last</a>
             <a href="#slide2">Next</a>
         </div>
     </div>
-
+    
     <div class="slide" id="slide2">
         <h2>Plan</h2>
         <ul style="text-align:left;">
@@ -70,28 +219,52 @@
             <li><a href="#slide8">Use Cases</a></li>
             <li><a href="#slide9">Results</a></li>
             <li><a href="#slide10">Implications</a></li>
+            <li><a href="#slide11">Conclusion</a></li>
         </ul>
-        <div class="nav-links">
-            <a href="#slide1">Prev</a>
+        <div class="bottom-nav">
+            <a href="#slide1">Previous</a>
             <a href="#slide3">Next</a>
         </div>
     </div>
 
     <div class="slide" id="slide3">
         <h2>Key Definitions</h2>
-        <ul style="text-align:left;">
-            <li><b>Machine Learning Classifier (ML Model):</b> The trained model that predicts outcomes based on input features (e.g., loan approval).</li>
-            <li><b>Original Input (x):</b> The set of features leading to an unfavorable outcome.</li>
-            <li><b>Original Outcome:</b> The model’s prediction, typically undesired by the user.</li>
-            <li><b>Counterfactual Example (c):</b> A modified version of the input that leads to a favorable outcome.</li>
-            <li><b>Proximity:</b> How similar the counterfactual is to the original input.</li>
-            <li><b>Diversity:</b> The variety of counterfactuals that offer different ways to achieve the desired outcome.</li>
-            <li><b>Feasibility:</b> How realistic the suggested changes are for the user.</li>
-            <li><b>Determinantal Point Processes (DPP):</b> A method used to ensure diversity among counterfactuals.</li>
-        </ul>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide2">Prev</a>
+        <div class="definitions-container">
+            <div class="definition-card ml-model">
+                <div class="definition-title">ML Model</div>
+                <div class="definition-text">A trained system that makes predictions based on input data.</div>
+            </div>
+            <div class="definition-card input-output">
+                <div class="definition-title">Original Input</div>
+                <div class="definition-text">The initial data given to the ML model, leading to an unfavorable outcome.</div>
+            </div>
+            <div class="definition-card input-output">
+                <div class="definition-title">Original Outcome</div>
+                <div class="definition-text">The model's prediction for the original input, usually undesired.</div>
+            </div>
+            <div class="definition-card counterfactual">
+                <div class="definition-title">Counterfactual</div>
+                <div class="definition-text">A modified version of the input that leads to a favorable outcome.</div>
+            </div>
+            <div class="definition-card properties">
+                <div class="definition-title">Proximity</div>
+                <div class="definition-text">How close a counterfactual is to the original input.</div>
+            </div>
+            <div class="definition-card properties">
+                <div class="definition-title">Diversity</div>
+                <div class="definition-text">The variety of counterfactuals offering different ways to achieve the desired outcome.</div>
+            </div>
+            <div class="definition-card properties">
+                <div class="definition-title">Feasibility</div>
+                <div class="definition-text">How realistic and achievable the suggested changes are for the user.</div>
+            </div>
+            <div class="definition-card ml-model">
+                <div class="definition-title">Determinantal Point Processes (DPP)</div>
+                <div class="definition-text">A method to ensure diversity among counterfactuals.</div>
+            </div>
+        </div>
+        <div class="bottom-nav">
+            <a href="#slide2">Previous</a>
             <a href="#slide4">Next</a>
         </div>
     </div>
@@ -99,90 +272,186 @@
     <div class="slide" id="slide4">
         <h2>Introduction to Counterfactuals</h2>
         <p>Counterfactuals show alternative outcomes by suggesting minimal, actionable changes to input features. This is critical for decision-making in fields like finance or healthcare, where understanding and acting on outcomes is important.</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide3">Prev</a>
+        <div class="formula-dropdown" onclick="toggleFormula('formula1')">
+            Click to see the basic counterfactual formula
+        </div>
+        <div id="formula1" class="formula-content">
+            <img src="https://latex.codecogs.com/gif.latex?c%20=%20\arg\min_c%20yloss(f(c),%20y)%20+%20|x%20-%20c|" alt="Basic Counterfactual Formula">
+            <div class="formula-explanation">
+                <div class="formula-part">
+                    <strong>Goal:</strong><br>
+                    Find the best counterfactual 'c'
+                </div>
+                <div class="formula-part">
+                    <strong>Condition 1:</strong><br>
+                    'c' should lead to desired outcome 'y'
+                </div>
+                <div class="formula-part">
+                    <strong>Condition 2:</strong><br>
+                    'c' should be close to original input 'x'
+                </div>
+            </div>
+        </div>
+        <div class="bottom-nav">
+            <a href="#slide3">Previous</a>
             <a href="#slide5">Next</a>
         </div>
     </div>
 
+
     <div class="slide" id="slide5">
         <h2>Actionable Counterfactuals</h2>
         <p>For counterfactuals to be useful, they must be feasible (realistic changes) and diverse (multiple options). The framework optimizes for both proximity (minimal changes) and diversity (variety in suggestions).</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide4">Prev</a>
+        <div class="formula-dropdown" onclick="toggleFormula('formula2')">
+            Click to see the diversity metric
+        </div>
+        <div id="formula2" class="formula-content">
+            <img src="https://latex.codecogs.com/gif.latex?dpp\_diversity%20=%20det(K)" alt="Diversity Metric">
+            <p>Where K is a kernel matrix given by:</p>
+            <img src="https://latex.codecogs.com/gif.latex?K_{i,j}%20=%20\frac{1}{1+dist(c_i,c_j)}" alt="K_{i,j} formula">
+            <p>This metric ensures that the generated counterfactuals are diverse.</p>
+        </div>
+        <div class="bottom-nav">
+            <a href="#slide4">Previous</a>
             <a href="#slide6">Next</a>
         </div>
     </div>
 
+
     <div class="slide" id="slide6">
         <h2>Generating Counterfactuals</h2>
-        <p>The framework uses optimization to generate diverse and feasible counterfactuals, ensuring that multiple options for changing outcomes are provided. DPP is used to balance proximity and diversity, avoiding redundant suggestions.</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide5">Prev</a>
-            <a href="#slide7">Next</a>
+        <p>The framework uses optimization to generate diverse and feasible counterfactuals, ensuring multiple options for changing outcomes are provided.</p>
+        <div class="formula-dropdown" onclick="toggleFormula('formula3')">
+            Click to see the optimization formula
+        </div>
+        <div id="formula3" class="formula-content">
+            <img src="https://latex.codecogs.com/gif.latex?C(x)%20=%20\arg\min_{c_1,%20...,c_k}%20\frac{1}{k}\sum_{i=1}^k%20yloss(f(c_i),%20y)%20+%20\lambda_1\frac{1}{k}\sum_{i=1}^k%20dist(c_i,%20x)%20-%20\lambda_2%20dpp\_diversity(c_1,%20...,%20c_k)" alt="Optimization Formula">
+            <div class="optimization-container">
+                <div class="optimization-part">
+                    <strong>Goal:</strong> Find the best set of counterfactuals (C) for input x
+                </div>
+                <div class="optimization-part">
+                    <strong>Effectiveness:</strong> Minimize the difference between the desired outcome (y) and the model's prediction for each counterfactual (f(c_i))
+                </div>
+                <div class="optimization-part">
+                    <strong>Proximity:</strong> Minimize the distance between each counterfactual (c_i) and the original input (x)
+                </div>
+                <div class="optimization-part">
+                    <strong>Diversity:</strong> Maximize the diversity among counterfactuals using DPP
+                </div>
+            </div>
+        </div>
+        <div class="bottom-nav">
+            <a href="#slide5">Previous</a>
+            <a href="#slide6a">Next</a>
         </div>
     </div>
 
+    <div class="slide" id="slide6a">
+        <h2>Understanding DPP (Determinantal Point Processes)</h2>
+        <p>DPP is used in this framework to ensure diversity among the generated counterfactuals.</p>
+        <div class="dpp-explanation">
+            <h3>Key Points:</h3>
+            <ul>
+                <li>DPP is a probabilistic model used for subset selection problems with diversity constraints.</li>
+                <li>In this context, it helps generate a set of counterfactuals that are different from each other.</li>
+                <li>The diversity metric is based on the determinant of a kernel matrix K.</li>
+            </ul>
+            <h3>DPP Diversity Metric:</h3>
+            <img src="https://latex.codecogs.com/gif.latex?dpp\_diversity%20=%20det(K)" alt="DPP Diversity Metric">
+            <p>Where K is a kernel matrix given by:</p>
+            <img src="https://latex.codecogs.com/gif.latex?K_{i,j}%20=%20\frac{1}{1+dist(c_i,c_j)}" alt="K_{i,j} formula">
+            <p>This metric ensures that the generated counterfactuals are diverse from each other, not just variations of a single counterfactual.</p>
+        </div>
+        <div class="bottom-nav">
+            <a href="#slide6">Previous</a>
+            <a href="#slide7">Next</a>
+        </div>
+    </div>
+    
     <div class="slide" id="slide7">
         <h2>Evaluation</h2>
-        <p>Metrics include:</p>
+        <p>Metrics for evaluating counterfactuals include:</p>
         <ul style="text-align:left;">
-            <li><b>Validity:</b> Does the counterfactual change the outcome?</li>
-            <li><b>Proximity:</b> How close it is to the original input.</li>
-            <li><b>Diversity:</b> Variety of solutions.</li>
+            <li><b>Validity:</b> The fraction of examples that actually change the outcome.</li>
+            <li><b>Proximity:</b> How close the counterfactuals are to the original input.</li>
+            <li><b>Diversity:</b> The variety among the generated counterfactuals.</li>
+            <li><b>Sparsity:</b> The number of features changed in the counterfactuals.</li>
         </ul>
-        <p>A trade-off exists between diversity and proximity; more diverse solutions might require larger changes.</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide6">Prev</a>
-            <a href="#slide8">Next</a>
+        <p>There's a trade-off between diversity and proximity; more diverse solutions might require larger changes.</p>
+        <div class="bottom-nav">
+            <a href="#slide6">Previous</a>
+            <a href="#slide8">First</a>
         </div>
     </div>
 
     <div class="slide" id="slide8">
         <h2>Use Cases</h2>
-        <p>Tested on datasets like <b>Adult-Income</b> (predicting income) and <b>COMPAS</b> (predicting recidivism). Examples include:</p>
+        <p>Tested on datasets like Adult-Income (predicting income, <a href="https://archive.ics.uci.edu/ml/datasets/adult" target="_blank">dataset link</a>) and COMPAS (predicting recidivism, <a href="https://github.com/propublica/compas-analysis" target="_blank">dataset link</a>). Examples include:</p>
         <blockquote>
             <i>"You would have received the loan if your income was $10,000 higher."</i>
         </blockquote>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide7">Prev</a>
-            <a href="#slide9">Next</a>
+        <p>Other datasets used: LendingClub (loan decisions) and German-Credit (credit risk assessment).</p>
+        <div class="bottom-nav">
+            <a href="#slide7">Previous</a>
+            <a href="#slide9">First</a>
         </div>
     </div>
 
     <div class="slide" id="slide9">
         <h2>Results</h2>
-        <p>The method generates more diverse and accurate counterfactuals than previous methods, helping users and model developers alike. Counterfactuals expose model biases and offer actionable insights.</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide8">Prev</a>
-            <a href="#slide10">Next</a>
+        <p>The proposed method (DiverseCF) generates more diverse and accurate counterfactuals than previous methods:</p>
+        <ul style="text-align:left;">
+            <li>Achieves nearly 100% valid CF examples for all values of k (number of counterfactuals).</li>
+            <li>Generates more diverse examples for both continuous and categorical features.</li>
+            <li>Outperforms baseline methods in approximating local decision boundaries.</li>
+            <li>Exposes potential biases in ML models, such as suggestions to change sensitive attributes like race or gender.</li>
+        </ul>
+        <div class="bottom-nav">
+            <a href="#slide8">Previous</a>
+            <a href="#slide10">First</a>
         </div>
     </div>
 
     <div class="slide" id="slide10">
         <h2>Implications</h2>
-        <p>Useful for end-users to change outcomes, developers to debug models, and evaluators to detect biases. Counterfactuals enhance transparency and fairness in AI models.</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide9">Prev</a>
-            <a href="#slide11">Next</a>
+        <p>Counterfactual explanations are useful for multiple stakeholders:</p>
+        <ul style="text-align:left;">
+            <li><b>End-users:</b> Understand how to change outcomes and make informed decisions.</li>
+            <li><b>Model developers:</b> Debug models and identify potential biases or odd edge-cases.</li>
+            <li><b>Fairness evaluators:</b> Discover biases and assess model properties.</li>
+            <li><b>Decision-makers:</b> Gain insights into model behavior for critical decisions.</li>
+        </ul>
+        <p>Overall, counterfactuals enhance transparency and fairness in AI models.</p>
+        <div class="bottom-nav">
+            <a href="#slide9">Previous</a>
+            <a href="#slide11">First</a>
         </div>
     </div>
 
     <div class="slide" id="slide11">
         <h2>Conclusion</h2>
-        <p>Counterfactual explanations help users understand and act on model decisions by providing realistic, diverse, and actionable alternatives. The framework improves transparency and fairness, making it valuable across various application domains.</p>
-        <div class="nav-links">
-            <a class="plan-link" href="#slide2">Plan</a>
-            <a href="#slide10">Prev</a>
+        <p>Counterfactual explanations help users understand and act on model decisions by providing realistic, diverse, and actionable alternatives. The proposed framework improves transparency and fairness, making it valuable across various application domains.</p>
+        <p>Future work includes:</p>
+        <ul style="text-align:left;">
+            <li>Developing methods for fully black-box ML models.</li>
+            <li>Incorporating causal knowledge during CF generation.</li>
+            <li>Conducting behavioral experiments to understand user preferences and cognitive load.</li>
+            <li>Exploring applications for different stakeholders in the decision-making process.</li>
+        </ul>
+        <p>Explore the <a href="https://github.com/interpretml/DiCE">DiCE Framework</a> for generating diverse counterfactual explanations.</p>
+        <p>For more details, see the <a href="https://arxiv.org/abs/1905.07697">original paper</a>.</p>
+        <div class="bottom-nav">
+            <a href="#slide10">Previous</a>
+            <a href="#slide1">First</a>
         </div>
     </div>
 
+    <script>
+        function toggleFormula(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
